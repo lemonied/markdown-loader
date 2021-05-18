@@ -6,10 +6,12 @@ const toHast = require('mdast-util-to-hast');
 const Prism = require('prismjs');
 const visit = require('unist-util-visit');
 const removePosition = require('unist-util-remove-position');
+const remarkGfm = require('remark-gfm');
 
 function remarkParse(str) {
   return unified()
     .use(markdown)
+    .use(remarkGfm)
     .parse(str);
 }
 

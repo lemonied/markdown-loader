@@ -30,7 +30,7 @@ module.exports = {
       ]
     }, {
       test: /\.md$/,
-      loader: require.resolve(path.resolve(__dirname, './index.js')),
+      loader: require.resolve(path.resolve(__dirname, './src/index.js')),
       exclude: /node_modules/,
     }],
   }

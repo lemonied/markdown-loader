@@ -5,8 +5,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "publish": "npm publish --access public",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "publish": "npm publish --access public"
   },
   "author": "ChenJiYuan",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "gray-matter": "4.0.3",
     "mdast-util-to-hast": "10.2.0",
     "prismjs": "1.23.0",
+    "remark-gfm": "^1.0.0",
     "remark-parse": "9.0.0",
     "stringify-object": "3.3.0",
     "unified": "9.2.1",
