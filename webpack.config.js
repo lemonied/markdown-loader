@@ -18,6 +18,16 @@ module.exports = {
       test: /\.js$/,
       loader: 'babel-loader',
       exclude: /node_modules/,
+    },  {
+      test: /\.(png|jpe?g|gif)$/,
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 8192
+          }
+        }
+      ]
     }, {
       test: /\.md$/,
       loader: require.resolve(path.resolve(__dirname, './index.js')),

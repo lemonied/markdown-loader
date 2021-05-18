@@ -14,3 +14,7 @@ interface Example {
 
 
 这是一句话
+
+
+![alt 属性文本](./avatar.jpg)
+
