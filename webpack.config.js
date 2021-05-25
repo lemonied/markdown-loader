@@ -32,6 +32,14 @@ module.exports = {
       test: /\.md$/,
       loader: require.resolve(path.resolve(__dirname, './src/index.js')),
       exclude: /node_modules/,
+      options: {
+        /**
+         * @see https://github.com/remarkjs/remark-autolink-headings
+        * */
+        autolink: {
+          behavior: 'prepend',
+        },
+      },
     }],
   }
 };

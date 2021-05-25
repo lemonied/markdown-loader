@@ -55,7 +55,7 @@ module.exports = async function loader(source) {
         return originalResult;
       },
     })};
-    export const front = ${stringify(data)}`
+    export const front = ${stringify(data)};`
   );
 };
 module.exports.raw = true;
