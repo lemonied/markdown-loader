@@ -35,7 +35,16 @@ module.exports = async function loader(source) {
         }
         break;
       case 'image':
-        node.url = `require('${node.url}')`;
+        /**
+        * @var {string} url
+        * */
+        let url = node.url || '';
+        if (!/^(https?:\/\/|\/)/.test(url)) {
+          if (!/^\./.test(url)) {
+            url = `./${url}`;
+          }
+          node.url = `require('${url}')`;
+        }
         break;
       default:
     }
@@ -50,7 +59,9 @@ module.exports = async function loader(source) {
     `export const hast = ${stringify(hast, {
       transform: (obj, prop, originalResult) => {
         if (prop === 'src') {
-          return originalResult.replace(/^'require\(\\'(.+)\\'\)'$/, `require('$1').default`);
+          return originalResult.replace(/^'require\(\\'(.+)\\'\)'$/, (word) => {
+            return `require('${RegExp.$1}').default`;
+          });
         }
         return originalResult;
       },

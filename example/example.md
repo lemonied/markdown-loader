@@ -17,6 +17,9 @@ interface Example {
 
 
 ![alt 属性文本](./avatar.jpg)
+![alt 属性文本](avatar.jpg)
+
+![alt 属性文本](https://github.com/module-federation/module-federation-examples/raw/master/docs/MFCover.png)
 
 | Branch  | Commit           |
 | ------- | ---------------- |
